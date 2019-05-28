@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  background-color: #e0554a; /* #e96c75; */
+  height: 100vh;
+}
+
+.App_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  text-align: center;
+  height: 10vh;
+}
+
+.Board {
+  width: 35vw;
+  height: 35vw;
+  margin: 0 auto;
+  border-top: 2px solid #696969;
+  border-left: 2px solid #696969;
+  border-bottom: 2px solid #696969;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.Tile {
+  flex-basis: calc(100% / 9);
+  height: calc(100% / 9);
+  border-right: 1px solid #aaaaaa;
+}
+
+.Tile:nth-child(-n + 72)/* :not(:nth-child(n + 19):nth-child(-n + 10)) */ {
+  border-bottom: 1px solid #aaaaaa;
+}
+
+.Tile:nth-child(9n + 9) {
+  border-right: none;
+}
+
+.Tile:nth-child(3n) {
+  border-right: 2px solid #696969;
+}
+
+/* .border */
+.Tile:nth-child(n + 19):nth-child(-n + 27),
+.Tile:nth-child(n + 46):nth-child(-n + 54) {
+  border-bottom: 2px solid #696969;
+}
+
+input {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: #ffd193; /* #f7d794; */
+  /* color: #000000; */
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+}
+
+input.tileInputLarge {
+  font-size: 1.5rem;
+}
+
+input.tileInputMedium {
+  font-size: 0.8rem;
+}
+
+input.tileInputSmall {
+  font-size: 0.6rem;
+}
+
+/* .candidatesColor {
+  color: red;
+} */
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input:disabled {
+  background-color: #f6ba68; /* #f5cd79; */
+}
+
+.btn_container {
+  height: calc(100vh - (15vh + 35vw));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn_select,
+button {
+  width: 100px;
+  height: 35px;
+  background-color: #ffffff;
+  color: #696969;
+  border: 1px solid #696969;
+  border-radius: 4px;
+  outline: none;
+  margin: 0 7px;
+  transition: all 0.2s ease-in-out;
+}
+
+.undo {
+  font-size: 0.7rem;
+}
+
+.btn_select:hover,
+button:hover {
+  cursor: pointer;
+  background-color: #696969;
+  color: #ffffff;
+}
